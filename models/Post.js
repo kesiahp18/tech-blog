@@ -3,24 +3,6 @@ const sequelize = require('../config/connection');
 
 //create Post model
 class Post extends Model {
-    // static upvote(body, models) {
-    //     return models.Vote.create({
-    //         user_id: body.user_id,
-    //         post_id: body.post_id
-    //     }).then(() => {
-    //         return Post.findOne({
-    //             where: {
-    //                 id: body.post_id
-    //             },
-    //             attributes: [
-    //                 'id',
-    //                 'post_url',
-    //                 'title',
-    //                 'created_at'
-    //             ]
-    //         });
-    //     });
-    // }
 }
 
 //create fields/columns for Post model
@@ -36,12 +18,9 @@ Post.init(
             type: DataTypes.STRING,
             allowNull: false
         },
-        post_url: {
+        post_content: {
             type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                isURL: true
-            }
+            allowNull: false
         },
         user_id: {
             type: DataTypes.INTEGER,
