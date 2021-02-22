@@ -35,3 +35,12 @@ ul {
 .create-a-post {
     width: 90vw;
 }
+.add-margin {
+    margin: 20px;
+}
+.edit-link {
+    margin: 0px 20px;
+}
+.hide {
+    display: none
+}

@@ -1,3 +1,5 @@
+document.querySelector('#login').classList.add('hide');
+
 async function signupFormHandler(event) {
     event.preventDefault();
   

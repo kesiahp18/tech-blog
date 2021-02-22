@@ -1,4 +1,4 @@
-<section>
+<section class="add-margin">
   <h2>Create New Post</h2>
 
   <form class="new-post-form">
@@ -15,7 +15,7 @@
 </section>
 {{#if posts.length}}
 <section>
-  <h2>Your Posts</h2>
+  <h2 class="add-margin">Your Posts</h2>
   <ul>
     {{#each posts as |post|}}
     <li>
@@ -26,4 +26,7 @@
   </ul>
 </section>
 {{/if}}
+<footer class="footer-nav">
+    <a href="/" class="button create-a-post">Back to Home</a>
+</footer>
 <script src="/javascript/add-post.js"></script>
