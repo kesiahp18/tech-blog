@@ -7,8 +7,8 @@
       <input type="text" id="post-title-input" name="post-title-input" />
     </div>
     <div>
-      <label for="post-content-input">Type Something</label>
-      <input id="post-content-input" name="post-content-input" />
+      <label for="post-content-input">Your Writing Here</label>
+      <textarea id="post-content-input" name="post-content-input"></textarea>
     </div>
     <button type="submit" class="btn">Create</button>
   </form>
@@ -16,14 +16,14 @@
 {{#if posts.length}}
 <section>
   <h2>Your Posts</h2>
-  <ol>
+  <ul>
     {{#each posts as |post|}}
     <li>
       {{> post-info post}}
       <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
     </li>
     {{/each}}
-  </ol>
+  </ul>
 </section>
 {{/if}}
 <script src="/javascript/add-post.js"></script>

@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tech Blog</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
+    <link rel="stylesheet" href="/css/styles.css">   
 </head>
 <body>
     <div class="wrapper">
@@ -13,21 +17,20 @@
             </h1>
             <nav>
                 {{#if loggedIn}}
-                <button id="logout" class="btn-no-style">logout</button>
+                <button id="logout" class="button-outline header-button">logout</button>
                 {{else}}
-                <a href="/login">login</a>
+                <button id="login" class="button-outline header-button">login</button>
                 {{/if}}
             </nav>
         </header>
         <main>
             {{{ body }}}
         </main>
-        <footer>
-            Thanks for visiting!
-        </footer>
     </div>
     {{#if loggedIn}}
     <script src="/javascript/logout.js"></script>
+    {{else}}
+    <script src="/javascript/homepage.js"></script>
     {{/if}}
 </body>
 
