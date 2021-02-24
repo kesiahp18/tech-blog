@@ -56,3 +56,7 @@ ul {
 .hide {
     display: none
 }
+.alert {
+    color: red;
+    font-weight: 200;
+}

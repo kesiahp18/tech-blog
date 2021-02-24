@@ -7,7 +7,7 @@ async function signupFormHandler(event) {
     const email = document.querySelector('#email-signup').value.trim();
     const password = document.querySelector('#password-signup').value.trim();
   
-    if (username && email && password) {
+    if (username && email && password && password.length > 7) {
         document.getElementById("signup-form").reset();
         const response = await fetch('/api/users', {
             method: 'post',
@@ -24,6 +24,11 @@ async function signupFormHandler(event) {
         } else {
             alert(response.statusText);
         }
+    } 
+    else if (username && email && password && password.length < 8) {
+        document.getElementById('signup-alert').innerHTML = 'Your password must have at least 8 characters';
+    } else {
+        document.getElementById('signup-alert').innerHTML = 'All fields are required';
     }
 }
 
@@ -47,8 +52,11 @@ async function loginFormHandler(event) {
         if(response.ok) {
             document.location.replace('/');
         } else {
-            alert(response.statusText);
+            console.log(response.statusText);
+            document.getElementById('login-alert').innerHTML = 'Login attempt failed';
         }
+    } else {
+        document.getElementById('login-alert').innerHTML = 'All fields are required';
     }
 }
 
