@@ -21,8 +21,10 @@ async function signupFormHandler(event) {
         //check response status
         if(response.ok) {
             console.log('sucess');
+            document.getElementById('signup-alert').innerHTML = '';
         } else {
-            alert(response.statusText);
+            console.log(response.statusText);
+            document.getElementById('signup-alert').innerHTML = 'Signup failed';
         }
     } 
     else if (username && email && password && password.length < 8) {
